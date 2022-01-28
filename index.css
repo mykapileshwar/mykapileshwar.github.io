@@ -109,7 +109,7 @@ body {
 @media screen and (max-width: 699px) {
     #carouselExampleIndicators img{
         border-radius: 30px;
-        height: 50vh;
+        height: 40vh;
     }
   }
 
