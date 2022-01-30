@@ -131,7 +131,7 @@ nav{
     text-shadow: 2px 2px 8px #FF0000;
 }
 
-nav div li{
+nav div .nav-li{
     background-color: #5c5858;
     margin: 6px;
     margin: 6px 10px;
