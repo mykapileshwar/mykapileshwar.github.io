@@ -1,23 +1,23 @@
 // fetch('https://kapileshwar.herokuapp.com/notices')
 //   .then(response => response.json())
 //   .then(data => console.log(data));
-// const data = await fetch('https://kapileshwar.herokuapp.com/notices');
-// const data = await response.json;
-// let colors = ["list-group-item list-group-item-primary", "list-group-item list-group-item-secondary", "list-group-item list-group-item-success", "list-group-item list-group-item-danger", "list-group-item list-group-item-warning"];
+const data = await fetch('https://kapileshwar.herokuapp.com/notices');
+const data = await response.json;
+let colors = ["list-group-item list-group-item-primary", "list-group-item list-group-item-secondary", "list-group-item list-group-item-success", "list-group-item list-group-item-danger", "list-group-item list-group-item-warning"];
 
 $(window).on("load", function () {
     console.log("Modal loading");
-    // for (i in data) {
-    //     let Instruction = document.getElementById("suchna");
-    //     var singleIntruction = document.createElement("li");
-    //     let j = i;
-    //     if (i > 5) {
-    //         j = (i - 1) % 5;
-    //     }
-    //     singleIntruction.className = `${colors[j]}`;
-    //     singleIntruction.innerHTML = `${data[i].fields.notice_message}`;
-    //     Instruction.appendChild(singleIntruction);
-    // }
+    for (i in data) {
+        let Instruction = document.getElementById("suchna");
+        var singleIntruction = document.createElement("li");
+        let j = i;
+        if (i > 5) {
+            j = (i - 1) % 5;
+        }
+        singleIntruction.className = `${colors[j]}`;
+        singleIntruction.innerHTML = `${data[i].fields.notice_message}`;
+        Instruction.appendChild(singleIntruction);
+    }
 
 
     $('#exampleModal').modal('show');
