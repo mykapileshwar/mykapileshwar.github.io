@@ -13,7 +13,7 @@ fetch('https://kapileshwar.herokuapp.com/notices')
         singleIntruction.innerHTML = `${data[i].fields.notice_message}`;
         Instruction.appendChild(singleIntruction);
     }
-    // $('#exampleModal').modal('show');
+    $('#exampleModal').modal('show');
 
   });
 
