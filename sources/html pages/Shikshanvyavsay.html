@@ -159,52 +159,57 @@
   </ul>
 
 <!-- Feedback Form modal -->
-<div class="p-4">
-  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel">Place your feedback:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="mb-3 px-3">
-          <label for="given_by">Name:</label>
-          <input type="text" class="form-control" name="given_by">
-        </div>
-        <div class="mb-3 px-3">
-          <label for="email">Email: </label>
-          <input type="email" class="form-control" name="email" id="email">
-        </div>
-        <div class="mb-3 px-3">
-          <label for="message-text" class="col-form-label">Message:</label>
-          <textarea class="form-control" id="message-text" name="feedback_message"></textarea>
-        </div>
-        <input type="hidden" name="about" value="Education">
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-            data-bs-dismiss="modal" onclick="submitFeedback()">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
-    tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Thanks for your valuable Feedback..!</h5>
-        </div>
-        <div class="modal-footer">
-          <a href="../../index.html"><button class="btn btn-primary" data-bs-target="#exampleModalToggle"
-              data-bs-toggle="modal">Close</button></a>
+  <div class="p-4">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="feedback-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Place your feedback:</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="feedback-form" method="post">
+          <div class="mb-3 px-3">
+            <label for="given_by">Name:</label>
+            <input type="text" class="form-control" name="given_by" required>
+          </div>
+          <div class="mb-3 px-3">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" name="email" id="email" required>
+          </div>
+          <div class="mb-3 px-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text" name="feedback_message" required></textarea>
+          </div>
+          <input type="hidden" name="about" value="Education">
+          <div class="modal-footer">
+            <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Submit</button> -->
+              <input type="submit" class="btn btn-primary" value="Submit">
+          </div>
+        </form>
         </div>
       </div>
     </div>
+    <!-- <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">Thanks for your valuable Feedback..!</h5>
+          </div>
+          <div class="modal-footer">
+            <a><button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                data-bs-toggle="modal">Close</button></a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Click Here to give
+      feedback..!</a>
   </div>
-  <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Click Here to give
-    feedback..!</a>
-</div>
 
   <!-- Footer Element -->
   <footer class="px-3 pb-2 bg-dark">
@@ -229,6 +234,8 @@
   <!-- Bootstrap JavaScript -->
   <script src="../../boot/bootstrap.bundle.min.js"></script>
   <script src="../../boot/bootstrap.min.js"></script>
+  <script src="../../feedback.js"></script>
+
 
 </body>
 

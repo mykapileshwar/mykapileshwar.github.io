@@ -1,10 +1,7 @@
-let data = fetch('https://kapileshwar.herokuapp.com/notices')
-  .then(response => response.json())
-  .then(data => {return data});
 let colors = ["list-group-item list-group-item-primary", "list-group-item list-group-item-secondary", "list-group-item list-group-item-success", "list-group-item list-group-item-danger", "list-group-item list-group-item-warning"];
-console.log(data);
-$(window).on("load", function () {
-    console.log("Modal loading");
+fetch('https://kapileshwar.herokuapp.com/notices')
+  .then(response => response.json())
+  .then(data => {
     for (i in data) {
         let Instruction = document.getElementById("suchna");
         var singleIntruction = document.createElement("li");
@@ -16,25 +13,11 @@ $(window).on("load", function () {
         singleIntruction.innerHTML = `${data[i].fields.notice_message}`;
         Instruction.appendChild(singleIntruction);
     }
+    // $('#exampleModal').modal('show');
 
+  });
 
-    $('#exampleModal').modal('show');
-});
-
-function submitFeedback(e) {
-    let feedack_message=document.querySelector("input[name='feedback_message']");
-    // "Grampanchayat", "Tourism", "Education"
-    let about=document.querySelector("input[name='about']");;
-    let given_by = document.querySelector("input[name='given_by']");;
-    let email = document.querySelector("input[name='email']");;
-
-    fetch("http://kapileshwar.herokuapp.com/feedback", {
-        method:"POST",
-        body: JSON.stringify({
-            feedack_message, about, given_by, email
-        })
-    })
-    .then(response => response.json())
-    .then(res => console.log(res))
-    .catch(e => console.log(e));
-}
+// $(window).on("load", function () {
+//     console.log("Modal loading");
+//     $('#exampleModal').modal('show');
+// });
